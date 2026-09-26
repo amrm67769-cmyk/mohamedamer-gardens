@@ -87,13 +87,22 @@
       <p>نماذج إلهامية لتنسيق الحدائق والفلل.</p>
     </div>
     <div class="gallery">
-      <figure><img src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=900&q=85" alt="حديقة فيلا منسقة" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=85" alt="مسطح أخضر وتنسيق نباتات" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=85" alt="زهور ونباتات في حديقة" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1599629954294-14df2c4c8c42?auto=format&fit=crop&w=900&q=85" alt="نخيل وتنسيق حديقة" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=85" alt="تصميم حديقة منزلية" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=85" alt="ممر حجري وسط الحديقة" loading="lazy"></figure>
     </div>
+  <div class="gallery" id="gallery">
+  <p>جاري تحميل أعمال شركة الأشجار...</p>
+</div>
+
+<script>
+fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/")
+  .then(response => response.json())
+  .then(files => {
+    const gallery = document.getElementById("gallery");
+    gallery.innerHTML = "";
+
+    files
+      .filter(file => file.name.startsWith("file_") && /\.(jpg|jpeg|png|webp)$/i.test(file.name))
+      .forEach((file, index) => {
+        const figure = document.createElement("
   </div>
 </section>
 
