@@ -21,7 +21,41 @@
     "name":"مهندس محمد عامر لتنسيق وتصميم الحدائق والفلل",
     "description":"تنسيق وتصميم الحدائق والفلل وزراعة الأشجار والنخيل والزهور والمسطحات الخضراء.","telephone":"+966570838853","address":{"@type":"PostalAddress","addressLocality":"الرياض","addressRegion":"الرياض","streetAddress":"حي الربيع، طريق الأمير محمد بن سلمان","addressCountry":"SA"}
   }
-  </script>
+  </script>  
+  <style>
+.fixed-contact {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+  direction: rtl;
+}
+
+.fixed-contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  white-space: nowrap;
+}
+
+.fixed-call {
+  background: #0b6b4f;
+}
+
+.fixed-whatsapp {
+  background: #25D366;
+}
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -190,5 +224,13 @@ fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/
 </footer>
 
 <script src="script.js"></script>
-</body>
+<div class="fixed-contact">
+  <a href="tel:0570838853" class="fixed-call">
+    📞 اتصال
+  </a>
+
+  <a href="https://wa.me/966570838853" class="fixed-whatsapp" target="_blank" rel="noopener">
+    💬 واتساب
+  </a>
+</div></body>
 </html>
