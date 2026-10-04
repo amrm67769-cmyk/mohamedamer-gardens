@@ -149,14 +149,14 @@
   </div>
 </section>
 <script>
-fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/")
+fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/gallery")
   .then(response => response.json())
   .then(files => {
     const gallery = document.getElementById("gallery");
     gallery.innerHTML = "";
 
     files
-      .filter(file => file.name.startsWith("file_") && /\.(jpg|jpeg|png|webp)$/i.test(file.name))
+      .filter(file => /\.(jpg|jpeg|png|webp)$/i.test(file.name))
       .forEach((file, index) => {
         const figure = document.createElement("figure");
         const img = document.createElement("img");
