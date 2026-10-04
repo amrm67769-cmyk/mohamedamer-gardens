@@ -1065,12 +1065,16 @@ button{
     font-size: 1rem !important;
     line-height: 1.8 !important;
   }
+.cards,
+.contact-grid {
+  grid-template-columns: 1fr !important;
+  width: 100% !important;
+}
 
-  .cards,
-  .gallery,
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
+.gallery {
+  grid-template-columns: repeat(2, 1fr) !important;
+  width: 100% !important;
+} 
   }
 
   .section {
