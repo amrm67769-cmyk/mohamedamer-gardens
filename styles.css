@@ -856,6 +856,55 @@ button{
 
 /* WHY US */
 
-.why{
-  display:grid;
-  grid-template-columns:1fr 
+.why{/* إصلاح عرض الموقع على الموبايل */
+@media (max-width: 700px){
+
+  html, body{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow-x:hidden !important;
+  }
+
+  .site-header,
+  .section,
+  footer{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .container{
+    width:92% !important;
+    max-width:1150px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .hero,
+  .hero-content,
+  .services,
+  .gallery,
+  .contact-section,
+  .why-section,
+  .reviews-section{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .nav{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .nav-links{
+    max-width:100% !important;
+  }
+
+  .nav-actions{
+    max-width:100% !important;
+  }
+
+  img{
+    max-width:100% !important;
+  }
+}
