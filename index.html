@@ -277,7 +277,22 @@ fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/
 </div><style>
 /* تحسين عرض الموقع على الجوال */
 @media (max-width: 768px) {
+.nav-links,
+.nav-actions {
+  display: none !important;
+}
 
+.menu-btn {
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.site-header .container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
   html, body {
     width: 100%;
     max-width: 100%;
