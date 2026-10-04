@@ -187,7 +187,7 @@ fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/
         const figure = document.createElement("figure");
         const img = document.createElement("img");
 
-        img.src = file.download_url;
+        img.src = "gallery/" + file.name;
         img.alt = "أعمال شركة الأشجار لتنسيق الحدائق - " + (index + 1);
         img.loading = "lazy";
 
