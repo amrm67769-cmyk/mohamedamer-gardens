@@ -797,6 +797,20 @@ button{
   inset:0;
   background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.45));
   pointer-events:none;
+}@media (max-width:700px){
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .gallery figure{
+    min-height:190px;
+    border-radius:16px;
+  }
+
+  .gallery img{
+    height:190px;
+  }
 }
 
 /* CONTACT */
