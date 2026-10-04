@@ -993,4 +993,92 @@ button{
   img{
     max-width:100% !important;
   }
+}/* FINAL MOBILE FIX */
+@media (max-width: 700px) {
+  html,
+  body {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .site-header,
+  .site-header .container,
+  .nav,
+  .hero,
+  .hero-content,
+  .section,
+  .container,
+  footer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .site-header .container {
+    min-height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .nav-links,
+  .nav-actions {
+    display: none !important;
+  }
+
+  .menu-btn {
+    display: block !important;
+    flex-shrink: 0 !important;
+    font-size: 24px !important;
+  }
+
+  .hero {
+    min-height: 560px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-content {
+    padding: 60px 16px !important;
+    margin: 0 !important;
+  }
+
+  .hero h1 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-text {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+  }
+
+  .cards,
+  .gallery,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+
+  .section {
+    padding: 60px 0 !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto;
+  }
 }
