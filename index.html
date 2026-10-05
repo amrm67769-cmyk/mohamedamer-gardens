@@ -346,13 +346,22 @@ fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/
 
   /* البطاقات والمعرض */
   .cards,
-  .grid,
-  .gallery {
-    width: 100% !important;
-    max-width: 100% !important;
-    grid-template-columns: 1fr !important;
-  }
+.cards,
+.grid {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 
+.gallery {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.gallery img {
+  height: auto !important;
+  object-fit: contain !important;
+} 
   /* منع أي عنصر عريض من كسر الشاشة */
   table,
   iframe,
