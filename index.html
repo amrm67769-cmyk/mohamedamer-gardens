@@ -175,30 +175,152 @@
   </div>
 </section>
 <script>
-fetch("https://api.github.com/repos/amrm67769-cmyk/mohamedamer-gardens/contents/gallery")
-  .then(response => response.json())
-  .then(files => {
-    const gallery = document.getElementById("gallery");
-    gallery.innerHTML = "";
+const projects = [
+  {
+    title: "جامعة الأمير سلطان – حي الملك سلمان",
+    description: "تنفيذ أعمال تنسيق وزراعة المساحات الخضراء، وزراعة الدراسينا واليوكا والكنتيا والأريكا، مع تنفيذ الأحواض الستانلس ستيل واستخدام البحص الفخوري لإضافة لمسة جمالية للموقع.",
+    images: [
+      "1-جامعة_الأمير_سلطان.jpg",
+      "2-جامعة_الأمير_سلطان.jpg",
+      "3-جامعة_الأمير_سلطان.jpg",
+      "4-جامعة_الأمير_سلطان.jpg",
+      "5-جامعة_الأمير_سلطان.jpg",
+      "6-جامعة_الأمير_سلطان.jpg",
+      "7-جامعة_الأمير_سلطان.jpg",
+      "8-جامعة_الأمير_سلطان.jpg"
+    ]
+  },
 
-    files
-      .filter(file => /\.(jpg|jpeg|png|webp)$/i.test(file.name))
-      .forEach((file, index) => {
-        const figure = document.createElement("figure");
-        const img = document.createElement("img");
+  {
+    title: "استراحة بنبان – أ. خالد العويسي",
+    description: "تنفيذ أعمال تنسيق وزراعة المساحات الخضراء، شملت زراعة 1100 م² من العشب الطبيعي، وتنفيذ الممرات وتركيب شبكة الري، مع زراعة الشجيرات العطرية والزهور.",
+    images: [
+      "8682.webp",
+      "8683.webp",
+      "8684.webp",
+      "8685.webp",
+      "8686.webp"
+    ]
+  },
 
-        img.src = "gallery/" + file.name;
-        img.alt = "أعمال شركة الأشجار لتنسيق الحدائق - " + (index + 1);
-        img.loading = "lazy";
+  {
+    title: "الهيئة العامة للمساحة والمعلومات الجيومكانية",
+    description: "تنفيذ أعمال زراعة وتنسيق المساحات الخضراء، وفرش العشب الطبيعي وتركيب شبكة الري وتنسيق الأشجار والنخيل والمساحات الخارجية.",
+    images: [
+      "12622.jpg",
+      "12623.jpg",
+      "12626.jpg",
+      "12627.jpg",
+      "12628.jpg",
+      "12629.jpg",
+      "12630.jpg",
+      "12631.jpg",
+      "12632.jpg",
+      "12633.jpg"
+    ]
+  },
 
-        figure.appendChild(img);
-        gallery.appendChild(figure);
-      });
-  })
-  .catch(() => {
-    document.getElementById("gallery").innerHTML =
-      "<p>تعذر تحميل صور الأعمال حاليًا.</p>";
-  });
+  {
+    title: "فيلا أستاذ محمد – حي الملقا",
+    description: "تنفيذ أعمال تنسيق وزراعة الحديقة، مع تنفيذ الممرات بالبحص والحجر الطبيعي وزراعة الشجيرات والزهور وتنسيق المساحات الخارجية.",
+    images: [
+      "11412.jpg",
+      "11414.jpg"
+    ]
+  },
+
+  {
+    title: "فيلا د. ماجد الراشدي – حي وادي لبن",
+    description: "تنفيذ أعمال تنسيق وزراعة الفيلا بالأشجار والنخيل والشجيرات والنباتات، مع تنسيق المساحات الزراعية حول المبنى وتوزيع النباتات بشكل متناسق.",
+    images: [
+      "11482.png",
+      "11484.png",
+      "11485.png",
+      "11486.png",
+      "11488.png",
+      "11489.png",
+      "11490.png",
+      "11491.png",
+      "11492.png",
+      "11494.png"
+    ]
+  }
+];
+
+const gallery = document.getElementById("gallery");
+
+gallery.innerHTML = projects.map(project => `
+  <article class="project-card">
+    <div class="project-info">
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+    </div>
+
+    <div class="project-images">
+      ${project.images.map(image => `
+        <img src="gallery/${image}" alt="${project.title}" loading="lazy">
+      `).join("")}
+    </div>
+  </article>
+`).join("");
+
+const style = document.createElement("style");
+style.textContent = `
+  .gallery {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .project-card {
+    width: 100%;
+    margin: 0 0 35px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.04);
+    box-sizing: border-box;
+  }
+
+  .project-info h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+  }
+
+  .project-info p {
+    margin: 0 0 18px;
+    line-height: 1.8;
+  }
+
+  .project-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .project-images img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .project-card {
+      padding: 12px;
+    }
+
+    .project-info h3 {
+      font-size: 20px;
+    }
+
+    .project-images {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+`;
+
+document.head.appendChild(style);
 </script>
 </section>
 
