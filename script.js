@@ -6,7 +6,14 @@ waLinks.forEach(id => {
   const el = document.getElementById(id);
   if (!el) return;
   if (WHATSAPP_NUMBER !== "PUT_YOUR_NUMBER_HERE") {
-    el.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  el.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+ el.addEventListener("click", () => {
+  if (typeof gtag === "function") {
+    gtag("event", "conversion", {
+      send_to: "AW-11547936383/INKCKWP5ikdEP-MvoIr"
+    });
+  }
+});
   } else {
     el.href = "#contact";
     el.addEventListener("click", e => {
