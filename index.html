@@ -390,6 +390,7 @@ document.head.appendChild(style);
 <div style="position:fixed!important;bottom:20px!important;left:50%!important;transform:translateX(-50%)!important;display:flex!important;gap:10px!important;z-index:2147483647!important;direction:rtl!important;">
 
   <a href="tel:0570838853"
+onclick="return gtag_report_conversion('tel:0570838853');"
      style="display:flex!important;align-items:center!important;justify-content:center!important;padding:12px 20px!important;border-radius:30px!important;background:#0b6b4f!important;color:#fff!important;text-decoration:none!important;font-weight:bold!important;font-size:15px!important;box-shadow:0 4px 12px rgba(0,0,0,.25)!important;white-space:nowrap!important;">
     📞 اتصال
   </a>
@@ -532,5 +533,21 @@ document.head.appendChild(style);
   }
 }
 </style>
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-11547936383/ZcGICNSL2bIdEP-MvoIr',
+    'event_callback': callback
+  });
+
+  return false;
+}
+</script>
 </html>
 
